@@ -1,23 +1,22 @@
-clear all
-load('auck_transrot')
-load('brat_transrot')
+function [geom1,geom2]=shift_scale(geom1,geom2)
 
-cg1=mean(geom1);
-geom1=geom1-cg1;
 
-cg2=mean(geom2);
-geom2=geom2-cg2;
+cg1=mean(geom1.pts);
+geom1.pts=geom1.pts-cg1;
 
-for i=1:size(geom1,1)
-    dis1(i)=norm(geom1(i,:));
+cg2=mean(geom2.pts);
+geom2.pts=geom2.pts-cg2;
+
+for i=1:size(geom1.pts,1)
+    dis1(i)=norm(geom1.pts(i,:));
 end
 
 meandis1=mean(dis1)
 
-for i=1:size(geom2,1)
-    dis2(i)=norm(geom2(i,:));
+for i=1:size(geom2.pts,1)
+    dis2(i)=norm(geom2.pts(i,:));
 end
 
 meandis2=mean(dis2);
 
-geom1=meandis2/meandis1*geom1;
+geom1.pts=meandis2/meandis1*geom1.pts;
