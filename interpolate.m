@@ -25,7 +25,7 @@ for i=1:size(geom2,1)
     end 
 end
 
-transfered_val=A*val.data;
-transfered_val(isnan(transfered_val))=0;
+transfered_data=A*data;
+transfered_data(isnan(transfered_data))=0;
 
 
