@@ -24,12 +24,6 @@ function [imgParameters] = plot3dMaps(imgParameters)
 if ~isfield(imgParameters, 'EdgeAlpha')
     imgParameters.EdgeAlpha = 0;
 end
-if ~isfield(imgParameters, 'EdgeColor')
-    imgParameters.EdgeColor = [0 0 0];
-end
-if ~isfield(imgParameters, 'FaceColor')
-    imgParameters.FaceColor = [0 0 0];
-end
 if ~isfield(imgParameters, 'FaceLighting')
     imgParameters.FaceLighting = 'gouraud';
 end
@@ -101,8 +95,6 @@ else
     h=patch('Vertices',imgParameters.geom.node,'Faces',imgParameters.geom.face);
     h.EdgeAlpha = imgParameters.EdgeAlpha; %0.2;
     h.FaceAlpha = 0.1;
-    h.EdgeColor = imgParameters.EdgeColor ;
-    h.FaceColor = imgParameters.FaceColor ;
 end
 
 %imgParameters.Limits
