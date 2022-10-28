@@ -11,7 +11,7 @@ for i=1:size(geom1.pts,1)
     dis1(i)=norm(geom1.pts(i,:));
 end
 
-meandis1=mean(dis1)
+meandis1=mean(dis1);
 
 for i=1:size(geom2.pts,1)
     dis2(i)=norm(geom2.pts(i,:));
